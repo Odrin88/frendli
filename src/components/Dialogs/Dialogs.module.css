@@ -1,0 +1,31 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+}
+.dialogs {
+
+}
+
+.dialogsitems {
+    padding: 10px;
+
+}
+
+.dialog {
+    font-size: 20px;
+    padding: 10px;
+}
+
+.dialogsitems .active {
+    color: darkblue;
+
+}
+
+.messages {
+
+}
+
+.message {
+    font-size: 20px;
+    padding: 10px;
+}
