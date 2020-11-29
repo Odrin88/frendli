@@ -1,0 +1,10 @@
+ .nav {
+    background-color: rgb(241, 248, 241);
+    border: 1px solid;
+    padding: 15px 0 0 15px;
+    }
+    
+    ul li {
+  display: block;
+
+}
