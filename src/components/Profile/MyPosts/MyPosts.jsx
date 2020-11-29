@@ -3,22 +3,28 @@ import classes from './MyPosts.module.css';
 import Posts from './Posts/Posts';
 
 const MyPosts = () => {
+
+    let PostData = [
+        {id: 1, message: "Hi, how are you?", likeCount: 14},
+        {id: 2, message: "How are you?", likeCount: 16},
+        {id: 3, message: "Good", likeCount: 19}
+    ]
     return (
     <div>
       <div className={classes.item}>
         <textarea></textarea>
-        <button>Add Post</button>
-        </div>
+          <div>
+              <button>Add Post</button>
+          </div>
+      </div>
       <div className={classes.item}>New post</div>
-      <Posts 
-      message="Hi, how are you?"
-      like="14"/>
-      <Posts 
-      message="Its my first post"
-      like="16"/>
-      <Posts 
-      message="Like my foto!"
-      like="19"/>
+      <Posts message={PostData[0].message} likeCount={PostData[0].likeCount}/>
+      <Posts
+          message={PostData[1].message}
+          likeCount={PostData[1].likeCount}/>
+      <Posts
+          message={PostData[2].message}
+          likeCount={PostData[2].likeCount}/>
     </div>
     )
    

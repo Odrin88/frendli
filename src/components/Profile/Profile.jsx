@@ -4,10 +4,12 @@ import MyPosts from './MyPosts/MyPosts';
 import Myprofile from './Myprofile/Myprofile';
 
 const Profile = () => {
-    return <div>
-  <Myprofile />
-  <MyPosts />   
-  </div>
+    return (
+        <div>
+            <Myprofile />
+            <MyPosts />
+        </div>
+    )
 }
 
 export default Profile;

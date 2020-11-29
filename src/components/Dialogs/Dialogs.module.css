@@ -3,22 +3,24 @@
     grid-template-columns: 2fr 5fr;
 }
 .dialogs {
-
+    padding: 30px;
 }
 
 .dialogsitems {
-    padding: 10px;
 
 }
 
-.dialog {
-    font-size: 20px;
-    padding: 10px;
+.dialog a {
+    color: #E77A07;
 }
 
-.dialogsitems .active {
-    color: darkblue;
+.dialog a.active {
+    color: red;
 
+}
+
+.dialog a:hover {
+    text-decoration: underline;
 }
 
 .messages {
@@ -27,5 +29,5 @@
 
 .message {
     font-size: 20px;
-    padding: 10px;
+    margin-top: 30px;
 }
