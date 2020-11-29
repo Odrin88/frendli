@@ -3,16 +3,18 @@ import './App.css';
 import Header from '../components/Header/Header.jsx';
 import Nav from '../components/Nav/Nav.jsx';
 import Profile from '../components/Profile/Profile.jsx';
+import Dialogs from "../components/Dialogs/Dialogs";
+
 
 
 
 const App = () => {
   return (
     <div className="app-wrapper">
-      <Header />
+        <Header />
         <Nav />
-          <Profile />
-          
+        <Profile />
+        <Dialogs />
     </div>
   );
 }
