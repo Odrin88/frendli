@@ -11,20 +11,26 @@ const MyPosts = () => {
     ]
     return (
     <div>
-      <div className={classes.item}>
-        <textarea></textarea>
-          <div>
-              <button>Add Post</button>
-          </div>
+      <div className={classes.mypost}>
+          <form>
+              <hr/>
+              <input type="text" size="40" placeholder="Write something post..." className={classes.mypost_add}/>
+              <hr/>
+              <div>
+                  <button type="submit" className={classes.mypost_btn}>Add Post</button>
+              </div>
+          </form>
       </div>
-      <div className={classes.item}>New post</div>
-      <Posts message={PostData[0].message} likeCount={PostData[0].likeCount}/>
-      <Posts
-          message={PostData[1].message}
-          likeCount={PostData[1].likeCount}/>
-      <Posts
-          message={PostData[2].message}
-          likeCount={PostData[2].likeCount}/>
+      <div className={classes.myposts_item}>
+          <Posts message={PostData[0].message} likeCount={PostData[0].likeCount}/>
+          <Posts
+              message={PostData[1].message}
+              likeCount={PostData[1].likeCount}/>
+          <Posts
+              message={PostData[2].message}
+              likeCount={PostData[2].likeCount}/>
+      </div>
+
     </div>
     )
    

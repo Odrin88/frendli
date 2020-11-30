@@ -5,7 +5,7 @@ import Myprofile from './Myprofile/Myprofile';
 
 const Profile = () => {
     return (
-        <div>
+        <div className={classes.profile}>
             <Myprofile />
             <MyPosts />
         </div>

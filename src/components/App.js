@@ -7,6 +7,7 @@ import Dialogs from "../components/Dialogs/Dialogs";
 import News from '../components/News/News';
 import Musik from "../components/Musik/Musik";
 import Setting from "../components/Setting/Setting";
+import Topnav from "../components/TopNavbar/Topnav";
 import {BrowserRouter, Route} from 'react-router-dom';
 
 
@@ -25,6 +26,7 @@ const App = () => {
                     <Route path='/musik' component={Musik}/>
                     <Route path='/setting' component={Setting}/>
                 </div>
+                <Topnav/>
             </div>
         </BrowserRouter>
 );

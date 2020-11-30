@@ -1,4 +1,38 @@
-.item {
+.mypost {
   font-size: 18px;
   margin-top: 10px;
+  height: 100px;
+  background-color: rgb(24 35 70);
+  box-shadow: 0px 0px 20px 0px rgba(23, 82, 138, 0.1);
+}
+
+.mypost_add {
+  background-color: rgb(24 35 70);
+  border: none;
+  margin-left: 25px;
+  outline: none;
+  font-size: 16px;
+  color: white;
+}
+
+.mypost_btn {
+  background-color: #50b5ff;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  width: 75px;
+  height: 30px;
+  cursor: pointer;
+  margin-left: 25px;
+  outline: none;
+}
+
+.mypost_btn:hover {
+  background-color: #fff;
+  color: #50b5ff;
+}
+.myposts_item {
+  margin-top: 10px;
+  background-color: rgb(24 35 70);
+  box-shadow: 0px 0px 20px 0px rgba(23, 82, 138, 0.1);
 }

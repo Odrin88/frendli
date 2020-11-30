@@ -1,7 +1,7 @@
 .nav {
-    border: 1px solid;
-    border-radius: 25px;
+    box-shadow: 0px 0px 20px 0px rgba(23, 82, 138, 0.1);
     padding: 15px 0 0 15px;
+    background-color: rgb(24 35 70);
 }
 
 ul li {
@@ -10,7 +10,7 @@ ul li {
 }
 
 a {
-    color: black;
+    color: #8c91b6;
     text-decoration: none;
     font-size: 22px;
 }
@@ -19,5 +19,6 @@ a:hover {
 }
 
 a.active {
-    color: darkblue;
+    color: #50b5ff;
 }
+
