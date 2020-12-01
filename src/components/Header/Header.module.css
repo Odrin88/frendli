@@ -3,10 +3,28 @@
     grid-area: h;
     background-color: rgb(24 35 70);
     box-shadow: 0px 0px 20px 0px rgba(23, 82, 138, 0.1);
-    }
-    .header img {
-      padding: 10px 0 0 10px;
-      height: 30px;
-      width: 30px;
-    }
+    grid-template-areas:
+    "l s";
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 10fr 1fr;
+}
+.header_logo {
+    grid-area: l;
+    padding: 15px 0 0 10px;
+    height: 30px;
+    width: 30px;
+}
+
+
+.search_box {
+    grid-area: s;
+    margin-top: 15px;
+    width: 350px;
+    height: 30px;
+    background-color: #50b5ff;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+
+}
 

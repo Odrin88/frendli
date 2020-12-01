@@ -9,19 +9,24 @@ import Musik from "../components/Musik/Musik";
 import Setting from "../components/Setting/Setting";
 import Topnav from "../components/TopNavbar/Topnav";
 import {BrowserRouter, Route} from 'react-router-dom';
+import DialogItem from "./Dialogs/DialogItem/DialogItem";
 
 
 
 
-const App = () => {
+
+const App = (props) => {
+
+
+
     return (
         <BrowserRouter>
             <div className="app-wrapper">
                 <Header/>
                 <Nav/>
                 <div className="app-wrapper-content">
-                    <Route exact path='/profile' component={Profile}/>
-                    <Route path='/dialogs' component={Dialogs}/>
+                    <Route path='/profile' render = { () => <Profile posts={props.posts}/> }/>
+                    <Route path='/dialogs' render = { () => <Dialogs items={props.items} message={props.message}/> }/>
                     <Route path='/news' component={News}/>
                     <Route path='/musik' component={Musik}/>
                     <Route path='/setting' component={Setting}/>
@@ -29,7 +34,7 @@ const App = () => {
                 <Topnav/>
             </div>
         </BrowserRouter>
-);
+    );
 }
 export default App;
 

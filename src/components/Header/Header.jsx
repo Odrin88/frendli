@@ -3,11 +3,13 @@ import classes from './Header.module.css';
 
 const Header = () => {
     return <header className={classes.header}>
-            <img src="https://cdn.pixabay.com/photo/2014/04/02/17/01/logo-307673_1280.png"/>
-           
-           </header>
-        
-    
+        <img className={classes.header_logo} src="https://www.logologo.com/logos/winged-g-logo.jpg"/>
+        <div className={classes.search_block}>
+            <input type="search" placeholder="Search here..." className={classes.search_box}/>
+        </div>
+    </header>
+
+
 }
 
 export default Header;

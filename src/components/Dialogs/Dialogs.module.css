@@ -14,7 +14,7 @@
     color: #E77A07;
 }
 
-.dialog a.active {
+.dialog .active {
     color: red;
 
 }
@@ -24,10 +24,11 @@
 }
 
 .messages {
-
+    margin-top: 30px;
 }
 
 .message {
     font-size: 20px;
-    margin-top: 30px;
+    color: #fff;
+
 }
