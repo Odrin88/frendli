@@ -6,7 +6,6 @@ import Myprofile from './Myprofile/Myprofile';
 
 const Profile = (props) => {
 
-
    return (
         <div className={classes.profile}>
             <Myprofile />

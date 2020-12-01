@@ -5,13 +5,8 @@ import Message from "./Message/Message";
 
 const Dialogs = (props) => {
 
-    let DialogsElements = props.items.map( items => <DialogItem name={items.name} key={items} id={items.id} /> );
-    let messageElement = props.message.map( message => <Message message={message.message} key={message} id={message.id}/>)
-
-
-    // let DialogsElements = DialogsData
-    //     .map( dialog => <DialogItem name={dialog.name} id={dialog.id} /> );
-
+    let DialogsElements = props.state.items.map( items => <DialogItem name={items.name} key={items} id={items.id} /> );
+    let MessageElement = props.state.message.map( message => <Message message={message.message} key={message} id={message.id}/>)
 
     return (
         <div className={classes.wrapper}>
@@ -22,7 +17,7 @@ const Dialogs = (props) => {
                 </div>
             </div>
             <div className={classes.messages}>
-                {messageElement}
+                {MessageElement}
             </div>
         </div>
 
