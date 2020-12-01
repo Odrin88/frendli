@@ -1,12 +1,21 @@
 .wrapper {
-    display: grid;
-    grid-template-columns: 2fr 5fr;
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
 }
 .dialogs {
     padding: 30px;
 }
 
-.dialogsitems {
+.dialogs img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    margin-right: 10px;
+}
+
+
+.dialogs_items {
 
 }
 
@@ -31,4 +40,8 @@
     font-size: 20px;
     color: #fff;
 
+}
+.message_list {
+    font-size: 20px;
+    color: #fff;
 }

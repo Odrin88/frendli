@@ -20,6 +20,7 @@ const MyPosts = (props) => {
                 </form>
             </div>
             <div className={classes.myposts_item}>
+
                 {postsElements}
             </div>
 

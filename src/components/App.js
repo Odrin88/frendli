@@ -7,7 +7,7 @@ import Dialogs from "../components/Dialogs/Dialogs";
 import News from '../components/News/News';
 import Musik from "../components/Musik/Musik";
 import Setting from "../components/Setting/Setting";
-import Topnav from "../components/TopNavbar/Topnav";
+import Freinds from "./Freinds/Freinds";
 import {BrowserRouter, Route} from 'react-router-dom';
 
 
@@ -33,7 +33,7 @@ const App = (props) => {
                     <Route path='/musik' component={Musik}/>
                     <Route path='/setting' component={Setting}/>
                 </div>
-                <Topnav/>
+                <Freinds state={props.state.freindsBar}/>
             </div>
         </BrowserRouter>
     );

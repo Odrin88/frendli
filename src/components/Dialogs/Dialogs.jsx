@@ -11,10 +11,14 @@ const Dialogs = (props) => {
     return (
         <div className={classes.wrapper}>
             <div className={classes.dialogs}>
-                <div className={classes.dialogsitems}>
+                <div className={classes.dialogs_items}>
+
                     {DialogsElements}
 
                 </div>
+            </div>
+            <div className={classes.messages}>
+                {MessageElement}
             </div>
             <div className={classes.messages}>
                 {MessageElement}

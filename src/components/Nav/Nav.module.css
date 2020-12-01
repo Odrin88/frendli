@@ -9,10 +9,10 @@ ul li {
     padding: 5px;
 }
 
-a {
+ .nav a {
     color: #8c91b6;
     text-decoration: none;
-    font-size: 22px;
+    font-size: 18px;
 }
 a:hover {
     text-decoration: underline;
