@@ -5,10 +5,10 @@ body {
   width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-areas: 
+  grid-template-areas:
   "h h h"
   "n c f";
-  grid-template-rows: 60px 1fr 100px;
+  grid-template-rows: 100px 1fr 100px;
   grid-template-columns: 1fr 5fr 1fr;
 }
 
