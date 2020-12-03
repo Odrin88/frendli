@@ -58,7 +58,13 @@ let store = {
     },
     subscribe(observer) {
         this._callSubsciber = observer;
+    },
+
+    addFreinds() {
+        console.log('hi')
     }
+
+
 
 }
 export default store;

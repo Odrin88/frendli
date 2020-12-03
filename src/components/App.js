@@ -34,7 +34,7 @@ const App = (props) => {
                     <Route path='/musik' component={Musik}/>
                     <Route path='/setting' component={Setting}/>
                 </div>
-                {/*<Freinds freindsBar={props.state.freindsBar}/>*/}
+                <Freinds freindsBar={props.state.freindsBar}/>
             </div>
         </BrowserRouter>
     );
