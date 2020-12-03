@@ -9,14 +9,17 @@ const MyPosts = (props) => {
     let newPostElement = React.createRef();
 
     let addPost = () => {
+        props.addPost()
 
+    }
+    let onPostChange = () => {
         let text = newPostElement.current.value;
-        props.addPost(text);
+        props.updateNewPostText(text);
     }
     return (
         <div>
             <div className={classes.mypost}>
-                <input ref={newPostElement} type="text" size="40" placeholder="Write something post..." className={classes.mypost_add}></input>
+                <input ref={newPostElement} value={props.newPostText} onChange={onPostChange} type="text" size="40" placeholder="Write something post..." className={classes.mypost_add}/>
                 <button onClick={addPost} type="submit" className={classes.mypost_btn}>Add Post</button>
             </div>
             <div className={classes.myposts_item}>
