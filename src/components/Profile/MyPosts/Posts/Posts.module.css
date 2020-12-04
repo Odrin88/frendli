@@ -1,16 +1,28 @@
 .item {
+    display: flex;
+    align-items: center;
     font-size: 16px;
     color: rgb(0, 0, 0);
     color: #fff;
     margin-top: 10px;
+    background-color: #8c91b6;
+    border-radius: 15px;
 }
 
 .posts_item {
 
 }
 
+.like_icon {
+    margin-top: 5px;
+    margin-right: 5px;
+    width: 18px;
+    height: 18px;
+}
+
 .posts_items {
-    display: inline-block;
+
+    min-width: 200px;
 }
 
 .likecount {
@@ -21,6 +33,7 @@
     width: 60px;
     height: 60px;
     border-radius: 50px;
+    margin-right: 15px;
 }
 
 button {

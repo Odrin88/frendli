@@ -12,7 +12,7 @@ let rerenderEntireTree = (state) => {
 
             <App state={state}
                  dispatch={store.dispatch.bind(store)} store={store}
-                /*addFreinds={store.addFreinds.bind(store)}*//*addFreinds={store.addFreinds.bind(store)}*//>,
+                 />,
        document.getElementById('root'));
 }
 

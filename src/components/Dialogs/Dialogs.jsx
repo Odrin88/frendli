@@ -5,7 +5,7 @@ import Message from "./Message/Message";
 import {
     sendNewMessageActionCreator,
     updateNewMessageTextActionCreator
-} from "../../Redux/State";
+} from "../../Redux/messagePage";
 
 const Dialogs = (props) => {
 
@@ -45,7 +45,7 @@ const Dialogs = (props) => {
                         <input value={newMessageText}
                                onChange={onNewMessageChange}
                                type="text" size="40"
-                               placeholder="Enter your message..."
+
                                className={classes.message_add}/>
                         <button onClick={sendMessage} type="submit" className={classes.message_btn}>Send message</button>
                     </div>

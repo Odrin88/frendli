@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './MyPosts.module.css';
 import Posts from './Posts/Posts';
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../Redux/State";
+import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../Redux/profilePage";
 
 
 
@@ -25,7 +25,12 @@ const MyPosts = (props) => {
     return (
         <div>
             <div className={classes.mypost}>
-                <input ref={newPostElement} value={props.newPostText} onChange={onPostChange} type="text" size="40" placeholder="Write something post..." className={classes.mypost_add}/>
+                <input ref={newPostElement}
+                       value={props.newPostText}
+                       onChange={onPostChange}
+                       type="text" size="40"
+                       placeholder="Write something post..."
+                       className={classes.mypost_add}/>
                 <button onClick={addPost} type="submit" className={classes.mypost_btn}>Add Post</button>
             </div>
             <div className={classes.myposts_item}>

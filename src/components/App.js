@@ -11,12 +11,6 @@ import Freinds from "./Freinds/Freinds";
 import  {BrowserRouter, Route}  from "react-router-dom";
 
 
-
-
-
-
-
-
 const App = (props) => {
 
     return (
@@ -35,7 +29,7 @@ const App = (props) => {
                     <Route path='/musik' component={Musik}/>
                     <Route path='/setting' component={Setting}/>
                 </div>
-                {/*<Freinds addFreinds={props.addFreinds}/>*/}
+                <Freinds state={props.state.freindsBar}/>
             </div>
         </BrowserRouter>
 
