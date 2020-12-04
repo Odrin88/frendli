@@ -8,11 +8,12 @@ import App from './components/App';
 
 
 let rerenderEntireTree = (state) => {
-    ReactDOM.render(<App state={state}
-                         addPost={store.addPost.bind(store)}
-                         updateNewPostText={store.updateNewPostText.bind(store)}
-                         addFreinds={store.addFreinds.bind(store)}/>,
-        document.getElementById('root'));
+    ReactDOM.render(
+
+            <App state={state}
+                 dispatch={store.dispatch.bind(store)} store={store}
+                /*addFreinds={store.addFreinds.bind(store)}*//*addFreinds={store.addFreinds.bind(store)}*//>,
+       document.getElementById('root'));
 }
 
 rerenderEntireTree(store.getState());
