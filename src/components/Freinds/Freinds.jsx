@@ -2,10 +2,16 @@ import React from 'react';
 import classes from './Freinds.module.css';
 import FreindsBar from "./FreindsBar/FreindsBar";
 
-const Freinds = (props) => {
+const Freinds = ({state}) => {
 
-    let FreindsItem = props.state.users.map( users => <FreindsBar name={users.name} surname={users.surname}
-           key={users} id={users.id} /> );
+    let FreindsItem = state.users.map( (users,index) => (
+        <FreindsBar
+            key = {index}
+            name={users.name}
+            surname={users.surname}
+            id={users.id}
+        />
+    ));
     return (
         <div className={classes.my_friends}>
             <h2 className={classes.freinds_title}>My Freinds</h2>

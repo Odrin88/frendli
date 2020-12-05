@@ -1,7 +1,8 @@
 import {combineReducers, createStore} from "redux";
-import messageReducer from "./messagePage";
-import freindsReducer from "./freindsBar";
-import profileReducer from "./profilePage";
+import messageReducer from "../Reducers/messagePage";
+import freindsReducer from "../Reducers/freindsBar";
+import profileReducer from "../Reducers/profilePage";
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 let reducers = combineReducers({
     profilePage: profileReducer,
@@ -9,7 +10,13 @@ let reducers = combineReducers({
     freindsBar: freindsReducer
 });
 
-let store = createStore(reducers);
+const composeEnhancer = composeWithDevTools ({
+    trace: true
+});
+
+
+
+let store = createStore(reducers, composeEnhancer());
 
 
 

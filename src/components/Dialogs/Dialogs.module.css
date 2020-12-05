@@ -39,7 +39,10 @@
 
 .messages {
     margin-top: 30px;
+    width: 400px;
+    overflow-wrap: anywhere;
 }
+
 
 .message {
     font-size: 20px;

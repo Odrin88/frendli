@@ -21,7 +21,7 @@ let initialState = {
         ]
 };
 
-const messageReducer = (state = {initialState}, action) => {
+const messageReducer = (state = initialState, action) => {
     switch (action.type) {
         case updateNewMessageText:
             state.newMessageText = action.newMessage;

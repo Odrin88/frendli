@@ -13,7 +13,7 @@ let initialState = {
 };
 
 
-const profileReducer = (state = {initialState}, action) => {
+const profileReducer = (state = initialState, action) => {
         switch(action.type) {
             case addPost:
                 let newPost = {
