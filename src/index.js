@@ -8,7 +8,7 @@ import StoreContext from "./StoreContext";
 
 
 
-let rerenderEntireTree = (state) => {
+let rerenderEntireTree = () => {
 
     ReactDOM.render(
         <StoreContext.Provider value={store}>

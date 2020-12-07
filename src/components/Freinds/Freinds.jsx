@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './Freinds.module.css';
 import FreindsBar from "./FreindsBar/FreindsBar";
 
-const Freinds = ({state}) => {
+const Freinds = (state) => {
 
     let FreindsItem = state.users.map( (users,index) => (
         <FreindsBar
@@ -13,6 +13,7 @@ const Freinds = ({state}) => {
         />
     ));
     return (
+
         <div className={classes.my_friends}>
             <h2 className={classes.freinds_title}>My Freinds</h2>
             <div className={classes.freinds_info}>

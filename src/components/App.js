@@ -6,12 +6,12 @@ import Profile from '../components/Profile/Profile.jsx';
 import News from '../components/News/News';
 import Musik from "../components/Musik/Musik";
 import Setting from "../components/Setting/Setting";
-import Freinds from "../components/Freinds/Freinds";
 import  {BrowserRouter, Route}  from "react-router-dom";
 import DialogsContainer from "./Dialogs/DialogsContainer";
+import FreindsContainer from "./Freinds/FreindsContainer";
 
 
-const App = (props) => {
+const App = () => {
 
     return (
         <BrowserRouter>
@@ -27,7 +27,7 @@ const App = (props) => {
                     <Route path='/musik' component={Musik}/>
                     <Route path='/setting' component={Setting}/>
                 </div>
-                {/*<Freinds />*/}
+                <FreindsContainer />
             </div>
         </BrowserRouter>
 
