@@ -3,7 +3,9 @@ import classes from './Posts.module.css'
 
 const Posts = (props) => {
 
-
+    let onAddLike = () => {
+        console.log(onAddLike);
+    }
     return (
         <div>
             <div className={classes.posts_items}>
@@ -19,7 +21,7 @@ const Posts = (props) => {
 
 
             <div>
-                <input type="image" src="https://pngimg.com/uploads/like/like_PNG15.png" className={classes.like_icon}/>
+                <button onClick={onAddLike} type="submit" className={classes.like_btn}>Like</button>
                 <span className={classes.likecount}>{props.likeCount}</span>
             </div>
         </div>

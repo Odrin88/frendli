@@ -4,26 +4,35 @@ import {
     sendNewMessageActionCreator,
     updateNewMessageTextActionCreator
 } from "../../Reducers/messagePage";
+import StoreContext from "../../StoreContext";
 
 
-const DialogsContainer = (props) => {
-
-    let state = props.store.getState().messagePage;
-
-
-    let sendMessage = () => {
-        props.store.dispatch(sendNewMessageActionCreator());
-    }
-    let onNewMessageChange = (newMessage) => {
-        props.store.dispatch(updateNewMessageTextActionCreator(newMessage));
-    }
+const DialogsContainer = () => {
 
     return (
-        <Dialogs
-            updateNewMessageText={onNewMessageChange}
-            sendNewMessage={sendMessage}
-            messagePage={state}
-        />
+        <StoreContext.Consumer>
+            {
+                (store) => {
+
+                    let state = store.getState().messagePage;
+
+
+                    let sendMessage = () => {
+                        store.dispatch(sendNewMessageActionCreator());
+                    }
+                    let onNewMessageChange = (newMessage) => {
+                        store.dispatch(updateNewMessageTextActionCreator(newMessage));
+                    }
+                    return (
+                        <Dialogs
+                            updateNewMessageText={onNewMessageChange}
+                            sendNewMessage={sendMessage}
+                            messagePage={state}
+                        />
+                    )}
+            }
+        </StoreContext.Consumer>
+
     )
 }
 
