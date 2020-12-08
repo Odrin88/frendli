@@ -1,25 +1,12 @@
 import React from 'react';
-import classes from './Freinds.module.css';
 import Freinds from "./Freinds";
-import StoreContext from "../../StoreContext";
+import {connect} from "react-redux";
 
-const FreindsContainer = () => {
-
-    return (
-        <StoreContext.Consumer>
-            {
-
-                (store) => {
-                    let state = store.getState()
-                    return (
-                        <Freinds users={state.freindsBar.users}/>
-                    )
-
-                }
-            }
-        </StoreContext.Consumer>
-
-    )
+const mapStateToProps = (state) => {
+    return {
+        users: state.freindsBar.users
+    }
 }
+const FreindsContainer = connect (mapStateToProps) (Freinds);
 
 export default FreindsContainer;
