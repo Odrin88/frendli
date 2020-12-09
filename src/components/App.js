@@ -9,7 +9,7 @@ import Setting from "../components/Setting/Setting";
 import  {BrowserRouter, Route}  from "react-router-dom";
 import DialogsContainer from "./Dialogs/DialogsContainer";
 import FreindsContainer from "./Freinds/FreindsContainer";
-import Users from "./Users/Users";
+import UsersContainer from "./Users/UsersContainer";
 
 
 const App = () => {
@@ -28,7 +28,7 @@ const App = () => {
                     <Route path='/musik' component={Musik}/>
                     <Route path='/setting' component={Setting}/>
                     <Route path='/users'
-                           render = { () => <Users /> }/>
+                           render = { () => <UsersContainer /> }/>
                 </div>
                 <FreindsContainer />
             </div>

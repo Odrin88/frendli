@@ -3,11 +3,13 @@ import messageReducer from "../Reducers/messagePage";
 import freindsReducer from "../Reducers/freindsBar";
 import profileReducer from "../Reducers/profilePage";
 import { composeWithDevTools } from 'redux-devtools-extension';
+import usersReducer from "../Reducers/usersPage";
 
 let reducers = combineReducers({
     profilePage: profileReducer,
     messagePage: messageReducer,
-    freindsBar: freindsReducer
+    freindsBar: freindsReducer,
+    usersPage: usersReducer
 });
 
 const composeEnhancer = composeWithDevTools ({

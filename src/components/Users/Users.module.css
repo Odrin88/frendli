@@ -1,0 +1,64 @@
+.user_block {
+    padding-top: 25px;
+    width: 800px;
+
+
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+.info_block {
+    width: 600px;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px;
+    background-color: #50b5ff;
+    border-radius: 15px;
+}
+
+.name_con {
+    display: flex;
+    justify-content: space-between;
+}
+
+.status_loc_sts{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.follow_block {
+    display: block;
+    text-align: end;
+    margin: 0 auto;
+}
+
+.users_img {
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    border: 2px solid white;
+}
+
+.follow_btn {
+    background-color: #50b5ff;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    width: 80px;
+    height: 40px;
+    cursor: pointer;
+    margin-left: 15px;
+    outline: none;
+    font-size: 18px;
+}
+.follow_btn:hover {
+    color: rgb(24 35 70);
+    background-color: #50B5C5;
+
+}
