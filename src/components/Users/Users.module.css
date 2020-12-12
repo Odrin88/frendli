@@ -63,9 +63,18 @@
 
 }
 
+.page_wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .selectedPage {
     font-weight: bold;
     cursor: pointer;
-    margin: 5px;
-    font-size: 16px;
+    font-size: 20px;
+    color: coral;
+    border: 1px solid white;
 }
+
+
