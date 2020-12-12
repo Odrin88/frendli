@@ -62,3 +62,10 @@
     background-color: #50B5C5;
 
 }
+
+.selectedPage {
+    font-weight: bold;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 16px;
+}
