@@ -74,7 +74,11 @@
     cursor: pointer;
     font-size: 20px;
     color: coral;
-    border: 1px solid white;
+    border: 1px solid #50b5ff;
 }
 
-
+.page_wrapper span {
+    padding: 5px;
+    cursor: pointer;
+    color: #ffffff;
+}
