@@ -1,8 +1,9 @@
 import React from 'react';
 import classes from './Profile.module.css';
-/*import MyPosts from './MyPosts/MyPosts';*/
 import Myprofile from './Myprofile/Myprofile';
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
+import News from "../News/News";
+
 
 
 const Profile = (props) => {

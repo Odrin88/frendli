@@ -12,6 +12,7 @@ import * as axios from "axios";
 import Users from "./Users";
 import Preloader from "../comman/preloader/Preloader";
 
+
 class UsersContainer extends React.Component {
     componentDidMount() {
         this.props.toggleIsFetching(true);
@@ -44,7 +45,8 @@ class UsersContainer extends React.Component {
                       users ={this.props.users}
                       follow={this.props.follow}
                       unfollow={this.props.unfollow}
-                      />
+            />
+
             </>
     }
 }

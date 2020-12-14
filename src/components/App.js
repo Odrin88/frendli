@@ -1,8 +1,6 @@
 import React from 'react';
 import './App.css';
-import Header from '../components/Header/Header.jsx';
 import Nav from '../components/Nav/Nav.jsx';
-import Profile from '../components/Profile/Profile.jsx';
 import News from '../components/News/News';
 import Musik from "../components/Musik/Musik";
 import Setting from "../components/Setting/Setting";
@@ -11,6 +9,8 @@ import DialogsContainer from "./Dialogs/DialogsContainer";
 import FreindsContainer from "./Freinds/FreindsContainer";
 import UsersContainer from "./Users/UsersContainer";
 import ProfileContainer from "./Profile/ProfileContainer";
+import HeaderContainer from "./Header/HeaderContainer";
+
 
 
 const App = () => {
@@ -18,10 +18,10 @@ const App = () => {
     return (
         <BrowserRouter>
             <div className="app-wrapper">
-                <Header/>
+                <HeaderContainer/>
                 <Nav/>
                 <div className="app-wrapper-content">
-                    <Route path='/profile' render = { () =>
+                    <Route path='/profile/:userId?' render = { () =>
                         <ProfileContainer /> }/>
                     <Route path='/dialogs' render = { () =>
                         <DialogsContainer /> }/>
@@ -32,6 +32,7 @@ const App = () => {
                            render = { () => <UsersContainer /> }/>
                 </div>
                 <FreindsContainer />
+
             </div>
         </BrowserRouter>
 

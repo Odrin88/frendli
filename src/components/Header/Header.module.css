@@ -4,7 +4,7 @@
     background-color: rgb(24 35 70);
     box-shadow: 0px 0px 20px 0px rgba(23, 82, 138, 0.1);
     grid-template-areas:
-    "l s";
+    "l s login";
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 10fr 1fr;
 }
@@ -26,5 +26,13 @@
     outline: none;
     border: none;
 
+}
+
+.login_block {
+    grid-area: login;
+}
+
+.login_block a {
+    color: white;
 }
 
