@@ -1,3 +1,8 @@
+import {usersAPI, usersAPI as userAPI} from "../API/api";
+import {toggleFollowingInProgress, unfollowSuccess} from "./usersPage";
+import Myprofile from "../components/Profile/Myprofile";
+import React from "react";
+
 const addPost = 'ADD-POST';
 const updateNewPostText = 'UPDATE-NEW-POST-TEXT';
 const setUserProfile = 'SET_USER_PROFILE';
@@ -48,5 +53,16 @@ export const addPostActionCreator = () => ({type: addPost});
 export const updateNewPostTextActionCreator = (text) =>
     ({type: updateNewPostText, newText: text});
 export const setUserProfileAC = (profile) => ({type: setUserProfile, profile })
+
+export const getUsersProfile = (userId) => {
+
+    return (dispatch) => {
+        usersAPI.getProfile(userId)
+            .then(response => {
+                dispatch(setUserProfileAC(response.data));
+            });
+    }
+
+}
 
 export default profileReducer;
