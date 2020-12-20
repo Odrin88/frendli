@@ -1,4 +1,4 @@
-import {applyMiddleware, combineReducers, createStore} from "redux";
+import {applyMiddleware, combineReducers, compose, createStore} from "redux";
 import messageReducer from "../Reducers/messagePage";
 import freindsReducer from "../Reducers/freindsBar";
 import profileReducer from "../Reducers/profilePage";
@@ -13,16 +13,19 @@ let reducers = combineReducers({
     freindsBar: freindsReducer,
     usersPage: usersReducer,
     auth: authReducer
+
 });
 
-/*const composeEnhancer = composeWithDevTools ({
+const composeEnhancer = composeWithDevTools ({
     trace: true
+
+});
+
+
+
+let store = createStore(reducers, compose (applyMiddleware(thunkMiddleware),
     composeEnhancer()
-});*/
-
-
-
-let store = createStore(reducers, applyMiddleware(thunkMiddleware));
+));
 
 
 

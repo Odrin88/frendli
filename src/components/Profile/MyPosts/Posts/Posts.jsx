@@ -3,6 +3,11 @@ import classes from './Posts.module.css'
 
 const Posts = (props) => {
 
+   // let onIncrement = () => {
+   //     if (props.likeCount % 2 !== 0) {
+   //         console.log('6')
+   //     }
+   // }
 
     return (
         <div>
@@ -19,6 +24,7 @@ const Posts = (props) => {
 
 
             <div>
+
                 <input type="image" src="https://pngimg.com/uploads/like/like_PNG15.png" className={classes.like_icon}/>
                 <span className={classes.likecount}>{props.likeCount}</span>
             </div>

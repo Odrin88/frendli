@@ -4,6 +4,8 @@ import Posts from './Posts/Posts';
 
 const MyPosts = (props) => {
 
+
+
     let postsElements = props.posts.map((post, index) => (
             <Posts
                 key = {index}

@@ -1,21 +1,14 @@
 import React from 'react';
 import classes from './Myprofile.module.css';
-import Preloader from "../../comman/preloader/Preloader";
+import ProfileStatus from './ProfileStatus';
 
 const Myprofile = (props) => {
-
-    if (!props.profile) {
-        return <Preloader/>
-    }
 
     return <div className={classes.content}>
         <img className={classes.img} src="https://prokadastr.com/wp-content/uploads/2019/09/kak-besplatno-poluchit-zemlu.jpg"/>
         <div className={classes.avatarblock}>
             <img className={classes.avatar} src="https://i04.fotocdn.net/s106/6ee26575aa7dcb29/user_l/2285411336.jpg"/>
 
-        </div>
-        <div>
-            {props.profile.fullName}
         </div>
         <div className={classes.profile_wrapper}>
             <div className={classes.social_links}>
@@ -86,6 +79,7 @@ const Myprofile = (props) => {
                 </ul>
             </div>
         </div>
+
 
     </div>
 }

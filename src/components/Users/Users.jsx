@@ -30,7 +30,7 @@ const Users = (props) => {
                 <div className={classes.wrapper}>
                     <div className={classes.follow_block}>
                         <div className={classes.avatar}>
-                            <NavLink to={'/profile/' + u.id}>
+                            <NavLink to={'/usersprofile/' + u.id}>
                                 <img className={classes.users_img}
                                      src={u.photos.small
                                 != null

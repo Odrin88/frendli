@@ -26,10 +26,22 @@ unfollow (userId) {
      return instance.delete(`follow/${userId}`)
     },
 getProfile (userId) {
-    return instance.get(`profile/`+ userId);
+    console.warn('Please profileAPI object')
+    return profileAPI.getProfile(userId);
 }
 
+}
 
+export const profileAPI = {
+    getProfile (userId) {
+        return instance.get(`profile/`+ userId);
+    },
+    getUsersStatus (userId) {
+        return instance.get(`profile/status/`+ userId);
+    },
+    updateUsersStatus (status) {
+        return instance.put(`profile/status`, {status});
+    }
 }
 
 export const authAPI = {

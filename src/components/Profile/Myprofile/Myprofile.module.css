@@ -64,3 +64,8 @@
     cursor: pointer;
 }
 
+.status_block {
+    display: inline-block;
+    color: #ffffff;
+}
+

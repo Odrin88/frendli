@@ -5,10 +5,12 @@ import {
     updateNewMessageTextActionCreator
 } from "../../Reducers/messagePage";
 import {connect} from "react-redux";
+import {withAuthRedirect} from "../../HOC/AuthRedirect";
+import {compose} from "redux";
 
 const mapStateToProps = (state) => {
     return {
-        messagePage: state.messagePage
+        messagePage: state.messagePage,
     }
 }
 
@@ -23,6 +25,7 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-const DialogContainer = connect(mapStateToProps, mapDispatchToProps) (Dialogs);
-
-export default DialogContainer;
+export default compose(
+    connect(mapStateToProps, mapDispatchToProps),
+    withAuthRedirect
+)(Dialogs);
