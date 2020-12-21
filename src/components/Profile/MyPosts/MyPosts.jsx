@@ -1,6 +1,8 @@
 import React from 'react';
 import classes from './MyPosts.module.css';
 import Posts from './Posts/Posts';
+import MyPostForm from "./MyPostForm";
+import MyPostReduxForm from "./MyPostForm";
 
 const MyPosts = (props) => {
 
@@ -14,29 +16,14 @@ const MyPosts = (props) => {
             />
     ));
 
-    let newPostElement = React.createRef();
 
-    let onAddPost = () => {
-        props.addPost();
-
-    }
-
-    let onPostChange = () => {
-        let text = newPostElement.current.value;
-        props.updateNewPostText(text);
+    let addNewPostChange = (value) => {
+        props.addPost(value.newPostText);
     }
 
     return (
         <div>
-            <div className={classes.mypost}>
-                <input ref={newPostElement}
-                       value={props.newPostText}
-                       onChange={onPostChange}
-                       type="text" size="40"
-                       placeholder="Write something post..."
-                       className={classes.mypost_add}/>
-                <button onClick={onAddPost} type="submit" className={classes.mypost_btn}>Add Post</button>
-            </div>
+            <MyPostReduxForm onSubmit={addNewPostChange}/>
             <div className={classes.myposts_item}>
                 {postsElements}
             </div>

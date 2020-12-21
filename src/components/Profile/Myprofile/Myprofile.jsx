@@ -1,8 +1,7 @@
 import React from 'react';
 import classes from './Myprofile.module.css';
-import ProfileStatus from './ProfileStatus';
 
-const Myprofile = (props) => {
+const Myprofile = () => {
 
     return <div className={classes.content}>
         <img className={classes.img} src="https://prokadastr.com/wp-content/uploads/2019/09/kak-besplatno-poluchit-zemlu.jpg"/>
