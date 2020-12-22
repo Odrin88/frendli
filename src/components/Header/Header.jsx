@@ -9,7 +9,8 @@ const Header = (props) => {
             <input type="search" placeholder="Search here..." className={classes.search_box}/>
         </div>
         <div className={classes.login_block}>
-            {props.isAuth ? props.login
+            {props.isAuth
+                ? <div>{props.login} - <button onClick={props.logout}>Log Out</button></div>
                 : <NavLink to={'/login'}>Login</NavLink> }
         </div>
     </header>
