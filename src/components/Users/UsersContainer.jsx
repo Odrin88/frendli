@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from "react-redux";
 import {
     follow,
-    getUsers,
+    requestUsers,
     setCurrentPage,
     toggleFollowingInProgress, unfollow,
 } from "../../Reducers/usersPage";
@@ -10,18 +10,25 @@ import Users from "./Users";
 import Preloader from "../comman/preloader/Preloader";
 import {withAuthRedirect} from "../../HOC/AuthRedirect";
 import {compose} from "redux";
+import {
+    getCurrentPage,
+    getFollowingInProgress,
+    getIsFetching,
+    getPageSize,
+    getTotalUsersCount, getUsers
+} from "../../Reducers/usersSelectors";
 
 
 class UsersContainer extends React.Component {
     componentDidMount() {
 
-        this.props.getUsers(this.props.currentPage,this.props.pageSize);
+        this.props.requestUsers(this.props.currentPage,this.props.pageSize);
 
     }
 
     onPageChenged = (pageNumber) => {
 
-        this.props.getUsers(pageNumber,this.props.pageSize);
+        this.props.requestUsers(pageNumber,this.props.pageSize);
 
     }
 
@@ -43,7 +50,7 @@ class UsersContainer extends React.Component {
 }
 
 
-const mapStateToProps = (state) => {
+/*const mapStateToProps = (state) => {
     return {
         users: state.usersPage.users,
         pageSize: state.usersPage.pageSize,
@@ -53,15 +60,27 @@ const mapStateToProps = (state) => {
         followingInProgress: state.usersPage.followingInProgress
 
     }
+}*/
+
+const mapStateToProps = (state) => {
+    return {
+        users: getUsers(state),
+        pageSize: getPageSize(state),
+        totalUsersCount: getTotalUsersCount(state),
+        currentPage: getCurrentPage(state),
+        isFetching: getIsFetching(state),
+        followingInProgress: getFollowingInProgress(state)
+
+    }
 }
-export default compose(withAuthRedirect,
-    connect(mapStateToProps,
+
+export default compose(connect(mapStateToProps,
         {
             follow,
             unfollow,
             setCurrentPage,
             toggleFollowingInProgress,
-            getUsers
+            requestUsers
         })
     ) (UsersContainer)
 

@@ -1,7 +1,10 @@
 import React from 'react';
 import classes from './Myprofile.module.css';
+import {compose} from "redux";
+import {connect} from "react-redux";
+import {withAuthRedirect} from "../../../HOC/AuthRedirect";
 
-const Myprofile = () => {
+const Myprofile = (props) => {
 
     return <div className={classes.content}>
         <img className={classes.img} src="https://prokadastr.com/wp-content/uploads/2019/09/kak-besplatno-poluchit-zemlu.jpg"/>
@@ -83,4 +86,5 @@ const Myprofile = () => {
     </div>
 }
 
-export default Myprofile;
+export default compose (connect(),
+withAuthRedirect) (Myprofile);
