@@ -7,6 +7,11 @@
   box-shadow: 0px 0px 20px 0px rgba(23, 82, 138, 0.1);
 }
 
+.mypost form {
+  display: flex;
+  align-items: center;
+}
+
 .mypost_add {
   border: 1px solid #1e2745;
   border-radius: 15px;

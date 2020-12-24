@@ -1,20 +1,24 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import classes from './Myprofile.module.css';
 
 
 const ProfileStatusWithHooks = (props) => {
 
 
-    let [editMode,  seteditMode] =   useState(false);
+    let [editMode,  setEditMode] =   useState(false);
     let [status,  setStatus] =   useState(props.status);
 
+    useEffect( () => {
+        setStatus(props.status);
+    }, [props.status]);
+
     const activateEditMode = () => {
-        seteditMode(true);
+        setEditMode(true);
     }
 
     const deActivateEditMode = () => {
 
-            seteditMode(false);
+        setEditMode(false);
         props.updateUsersStatus(status);
     }
 

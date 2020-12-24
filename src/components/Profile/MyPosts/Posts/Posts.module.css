@@ -9,9 +9,6 @@
     border-radius: 15px;
 }
 
-.posts_item {
-
-}
 
 .like_icon {
     margin-top: 5px;
@@ -20,13 +17,19 @@
     height: 18px;
 }
 
+.like_icon:hover {
+    transform: scale(1.1);
+
+}
+
+.like_block {
+    display: flex;
+    align-items: center;
+}
+
 .posts_items {
 
     min-width: 200px;
-}
-
-.likecount {
-    color: #fff;
 }
 
 .item img {

@@ -27,6 +27,7 @@ const MyPosts = (props) => {
             <div className={classes.myposts_item}>
                 {postsElements}
             </div>
+            <likeCount />
         </div>
     )
 }

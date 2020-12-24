@@ -1,13 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import classes from './Posts.module.css'
 
 const Posts = (props) => {
 
-   // let onIncrement = () => {
-   //     if (props.likeCount % 2 !== 0) {
-   //         console.log('6')
-   //     }
-   // }
+    const [count, setLike] = useState(0);
+
+
 
     return (
         <div>
@@ -22,11 +20,12 @@ const Posts = (props) => {
 
             </div>
 
+            <div className={classes.like_block}>
+                <img onClick={() => setLike(count + 1)}
+                     className={classes.like_icon}
+                     src="https://pngimg.com/uploads/like/like_PNG15.png"/>
 
-            <div>
-
-                <input type="image" src="https://pngimg.com/uploads/like/like_PNG15.png" className={classes.like_icon}/>
-                <span className={classes.likecount}>{props.likeCount}</span>
+                <p>{count}</p>
             </div>
         </div>
     )
