@@ -1,6 +1,7 @@
 import React from 'react';
 import Preloader from "../comman/preloader/Preloader";
 import ProfileStatus from "../Profile/Myprofile/ProfileStatus";
+import ProfileStatusWithHooks from "../Profile/Myprofile/ProfileStatusWithHooks";
 
 const UsersProfile = (props) => {
 
@@ -11,7 +12,7 @@ const UsersProfile = (props) => {
         return (
             <div>
                 {props.profile.fullName}
-                <ProfileStatus status={props.status}
+                <ProfileStatusWithHooks status={props.status}
                                updateUsersStatus={props.updateUsersStatus}/>
             </div>
             )
