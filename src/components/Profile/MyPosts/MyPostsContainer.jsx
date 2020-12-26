@@ -1,7 +1,6 @@
 import React from 'react';
 import {
-    addPostActionCreator, likeCountIncrementAC,
-    updateNewPostTextActionCreator
+    addPostActionCreator,
 } from "../../../Reducers/profilePage";
 import MyPosts from "./MyPosts";
 import {connect} from "react-redux";
@@ -20,12 +19,7 @@ const mapDispatchToProps = (dispatch) => {
 
         addPost: (newPostText) => {
             dispatch(addPostActionCreator(newPostText));
-        },
-
-        /*count: () => {
-            dispatch(likeCountIncrementAC());
-        }*/
-
+        }
     }
 }
 

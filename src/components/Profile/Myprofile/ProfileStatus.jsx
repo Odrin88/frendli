@@ -1,51 +1,55 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import classes from './Myprofile.module.css';
 
 
-class ProfileStatus extends React.Component {
-    state = {
-        editMode: false,
-        status: " ",
+const ProfileStatus = (props) => {
+
+    let [editMode,  setEditMode] =   useState(false);
+    let [status,  setStatus] =   useState(props.newStatus);
+
+    useEffect( () => {
+
+        setStatus(props.newStatus);
+    }, [props.newStatus]);
+
+    const activateEditMode = () => {
+        setEditMode(true);
     }
 
-    activateEditMode = () => {
-        this.setState( {
-            editMode: true
-        });
+    const deActivateEditMode = (e) => {
+
+        setEditMode(false);
+        setStatus(e.currentTarget.value);
 
     }
 
-    deActivateEditMode = () => {
-        this.setState( {
-            editMode: false
-        });
+
+    const onStatusChange = (e) => {
+        setStatus(e.currentTarget.value);
     }
 
 
-
-    render() {
         return (
             <div className={classes.status_block}>
-                {!this.state.editMode &&
+                {!editMode &&
                     <div>
-                        <span onDoubleClick={this.activateEditMode}>
-                            {this.value || "No status"}
-                            </span>
+                        <span onDoubleClick={activateEditMode} >
+                            {status || "No status"}
+                        </span>
                     </div>
                 }
-                {this.state.editMode &&
+                {editMode &&
                     <div>
                         <input
-                            onChange={this.onStatusChange}
+                            onChange={onStatusChange}
+                            value={status}
                             autoFocus={true}
-                            onBlur={this.deActivateEditMode}
-                            value={this.status}
+                            onBlur={deActivateEditMode}
                             />
                     </div>
                 }
             </div>
         )
-    }
 
 }
 

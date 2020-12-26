@@ -53,7 +53,10 @@ const Myprofile = (props) => {
             <div className={classes.nameprofile}>
                 Ordin Evgeny
             </div>
-            <ProfileStatus/>
+
+            <ProfileStatus newStatus={props.newStatus}
+                           newStatusText={props.newStatusText}/>
+
             <div className={classes.social_data}>
                 <ul className={classes.social_data_info}>
                     <li className={classes.social_data_item}>

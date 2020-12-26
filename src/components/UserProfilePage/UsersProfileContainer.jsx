@@ -2,7 +2,7 @@ import React from 'react';
 import UsersProfile from "./UsersProfile";
 import {compose} from "redux";
 import {connect} from "react-redux";
-import {getUsersProfile, getUsersStatus, updateUsersStatus} from "../../Reducers/profilePage";
+import {getUsersProfile, getUsersStatus, updateUsersStatus} from "../../Reducers/usersPage";
 import {withRouter} from "react-router-dom";
 import {withAuthRedirect} from "../../HOC/AuthRedirect";
 
@@ -37,8 +37,8 @@ class UsersProfileContainer extends React.Component {
 
 
 let mapStateToProps = (state) => ({
-    profile: state.profilePage.profile,
-    status: state.profilePage.status,
+    profile: state.usersPage.profile,
+    status: state.usersPage.status,
     authorizedUserId: state.auth.userId,
     isAuth: state.auth.isAuth
 

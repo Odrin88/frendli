@@ -1,4 +1,4 @@
-import {usersAPI as userAPI, usersAPI} from "../API/api";
+import {profileAPI, usersAPI as userAPI, usersAPI} from "../API/api";
 
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
@@ -7,6 +7,8 @@ const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT';
 const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 const TOGGLE_FOLLOWING_IN_PROGRESS = 'TOGGLE_FOLLOWING_IN_PROGRESS';
+const setUserProfile = 'SET_USER_PROFILE';
+const setUsersStatus = 'SET_USERS_STATUS';
 
 
 let initialState = {
@@ -15,7 +17,10 @@ let initialState = {
     totalUsersCount: 50,
     currentPage: 1,
     isFetching: true,
-    followingInProgress: []
+    followingInProgress: [],
+
+    profile: null,
+    status: ""
 
 
 };
@@ -61,8 +66,14 @@ const usersReducer = (state = initialState, action) => {
                 ...state,
                 followingInProgress: action.inProgress
                     ? [...state.followingInProgress, action.userId]
-                    : state.followingInProgress.filter(id => id != action.userId)
+                    : state.followingInProgress.filter(id => id !== action.userId)
             }
+        }
+        case setUserProfile: {
+            return {...state, profile: action.profile}
+        }
+        case setUsersStatus: {
+            return {...state, status: action.status}
         }
         default:
             return state;
@@ -75,7 +86,9 @@ export const setUsers = (users) => ({type: SETUSERS, users});
 export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage});
 export const setTotalUsersCount = (totalUsersCount) => ({type: SET_TOTAL_USERS_COUNT, count: totalUsersCount});
 export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching});
-export const toggleFollowingInProgress = (inProgress, userId) => ({type: TOGGLE_FOLLOWING_IN_PROGRESS, inProgress, userId})
+export const toggleFollowingInProgress = (inProgress, userId) => ({type: TOGGLE_FOLLOWING_IN_PROGRESS, inProgress, userId});
+export const setUserProfileAC = (profile) => ({type: setUserProfile, profile });
+export const setUsersStatusAC = (status) => ({type: setUsersStatus, status});
 
 export const requestUsers = (page,pageSize) => {
 
@@ -120,5 +133,24 @@ export const unfollow = (userId) => {
             });
     }
 
+}
+
+export const getUsersProfile = (userId) => (dispatch) => {
+    usersAPI.getProfile(userId).then(response => {
+        dispatch(setUserProfileAC(response.data));
+    });
+}
+export const getUsersStatus = (userId) => (dispatch) => {
+    profileAPI.getUsersStatus(userId).then(response => {
+        dispatch(setUsersStatusAC(response.data));
+    });
+}
+
+export const updateUsersStatus = (status) => (dispatch) => {
+    profileAPI.updateUsersStatus(status).then(response => {
+        if (response.data.resultCode === 0) {
+            dispatch(setUsersStatusAC(status));
+        }
+    });
 }
 export default usersReducer;

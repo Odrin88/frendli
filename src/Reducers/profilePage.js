@@ -1,13 +1,10 @@
-import {profileAPI, usersAPI, usersAPI as userAPI} from "../API/api";
-import {toggleFollowingInProgress, unfollowSuccess} from "./usersPage";
-import Myprofile from "../components/Profile/Myprofile";
+import {profileAPI} from "../API/api";
 import React from "react";
 
 const addPost = 'ADD-POST';
-const updateNewPostText = 'UPDATE-NEW-POST-TEXT';
-const setUserProfile = 'SET_USER_PROFILE';
-const setUsersStatus = 'SET_USERS_STATUS';
-// const likeCountIncrement ='LIKE_COUNT_INCREMENT'
+const setProfileStatus = 'SET_PROFILE_STATUS';
+const updateProfileStatus = 'UPDATE_PROFILE_STATUS';
+
 
 
 let initialState = {
@@ -17,9 +14,7 @@ let initialState = {
             {id: 3, message: "Good", likeCount: 19},
             {id: 4, message: "Go play football", likeCount: 12}
         ],
-        // count: 0,
 
-        profile: null,
         status: ""
 };
 
@@ -38,42 +33,47 @@ const profileReducer = (state = initialState, action) => {
                 }
             }
 
-            case setUserProfile: {
-                return {...state, profile: action.profile}
+            case setProfileStatus: {
+                return {...state, status: action.newStatus}
             }
-            case setUsersStatus: {
-                return {...state, status: action.status}
+
+            case updateProfileStatus: {
+                return {...state, status: action.newStatusText}
             }
-            /*case likeCountIncrement: {
-                return {...state, count: action.count}
-            }*/
+
+
+
             default:
                 return state;
         }
 }
 
 export const addPostActionCreator = (newPostText) => ({type: addPost, newPostText});
-export const setUserProfileAC = (profile) => ({type: setUserProfile, profile });
-export const setUsersStatusAC = (status) => ({type: setUsersStatus, status});
+export const setProfileStatusAC = (newStatus) => ({type: setProfileStatus, newStatus});
+export const updateProfileStatusAC = (newStatusText) => ({type: updateProfileStatus, newStatusText});
 
-// export const likeCountIncrementAC = (count) => ({type: likeCountIncrement, count})
-export const getUsersProfile = (userId) => (dispatch) => {
-        usersAPI.getProfile(userId).then(response => {
-                dispatch(setUserProfileAC(response.data));
-            });
-}
-export const getUsersStatus = (userId) => (dispatch) => {
-    profileAPI.getUsersStatus(userId).then(response => {
-        dispatch(setUsersStatusAC(response.data));
-    });
-}
 
-export const updateUsersStatus = (status) => (dispatch) => {
-    profileAPI.updateUsersStatus(status).then(response => {
-        if (response.data.resultCode === 0) {
-            dispatch(setUsersStatusAC(status));
+export const getProfileStatus = (dispatch) => {
+    return {
+        newStatus: (newStatus) => {
+            dispatch(setProfileStatusAC(newStatus));
         }
-    });
+    }
 }
+
+export const updateStatus = (dispatch) => {
+    return {
+        newStatusText: (newStatusText) => {
+            dispatch(updateProfileStatusAC(newStatusText));
+        }
+    }
+}
+
+/*export const getProfileStatus = (userId) => (dispatch) => {
+    profileAPI.getUsersStatus(userId).then(response => {
+        dispatch(setProfileStatusAC(response.data));
+    });
+}*/
+
 
 export default profileReducer;
