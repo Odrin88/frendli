@@ -5,8 +5,7 @@ import classes from './Myprofile.module.css';
 class ProfileStatus extends React.Component {
     state = {
         editMode: false,
-        status: this.props.status
-
+        status: " ",
     }
 
     activateEditMode = () => {
@@ -20,23 +19,9 @@ class ProfileStatus extends React.Component {
         this.setState( {
             editMode: false
         });
-        this.props.updateUsersStatus(this.state.status);
     }
 
 
-    onStatusChange = (e) => {
-        this.setState({
-           status: e.currentTarget.value
-        });
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-        if (prevProps.status !== this.props.status) {
-            this.setState({
-                status: this.props.status
-            })
-        }
-    }
 
     render() {
         return (
@@ -44,7 +29,8 @@ class ProfileStatus extends React.Component {
                 {!this.state.editMode &&
                     <div>
                         <span onDoubleClick={this.activateEditMode}>
-                            {this.props.status|| "No status"}</span>
+                            {this.value || "No status"}
+                            </span>
                     </div>
                 }
                 {this.state.editMode &&
@@ -53,7 +39,8 @@ class ProfileStatus extends React.Component {
                             onChange={this.onStatusChange}
                             autoFocus={true}
                             onBlur={this.deActivateEditMode}
-                            value={this.state.status}/>
+                            value={this.status}
+                            />
                     </div>
                 }
             </div>

@@ -3,6 +3,7 @@ import classes from './Myprofile.module.css';
 import {compose} from "redux";
 import {connect} from "react-redux";
 import {withAuthRedirect} from "../../../HOC/AuthRedirect";
+import ProfileStatus from "./ProfileStatus";
 
 const Myprofile = (props) => {
 
@@ -52,6 +53,7 @@ const Myprofile = (props) => {
             <div className={classes.nameprofile}>
                 Ordin Evgeny
             </div>
+            <ProfileStatus/>
             <div className={classes.social_data}>
                 <ul className={classes.social_data_info}>
                     <li className={classes.social_data_item}>
