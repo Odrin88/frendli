@@ -17,10 +17,8 @@ const ProfileStatus = (props) => {
     }
 
     const deActivateEditMode = (e) => {
-
         setEditMode(false);
         setStatus(e.currentTarget.value);
-
     }
 
 
@@ -33,14 +31,15 @@ const ProfileStatus = (props) => {
             <div className={classes.status_block}>
                 {!editMode &&
                     <div>
-                        <span onDoubleClick={activateEditMode} >
-                            {status || "No status"}
+                        <span className={classes.status_block_text} onDoubleClick={activateEditMode} >
+                            {status || "Add status"}
                         </span>
                     </div>
                 }
                 {editMode &&
                     <div>
                         <input
+                            className={classes.status_block_change_text}
                             onChange={onStatusChange}
                             value={status}
                             autoFocus={true}

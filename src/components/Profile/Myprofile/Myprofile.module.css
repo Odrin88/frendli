@@ -69,3 +69,18 @@
     color: #ffffff;
 }
 
+.status_block .status_block_text {
+    border: 1px solid #50b5ff;
+}
+
+.status_block .status_block_text:hover {
+    border: 1px solid #E77A07;
+}
+
+.status_block .status_block_change_text {
+    outline: none;
+    border-radius: 15px;
+    background-color: aliceblue;
+    height: 25px;
+    width: 150px;
+}

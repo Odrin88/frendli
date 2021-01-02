@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import classes from './Users.module.css';
 import userPhoto from '../assets/imeg/user.png'
 import {NavLink} from "react-router-dom";
@@ -13,14 +13,13 @@ const Users = (props) => {
         pages.push(i);
     }
 
-
-    return <div>
+       return <div>
 
         <div className={classes.page_wrapper}>
             {pages.map(p => {
                 return <span className={props.currentPage === p && classes.selectedPage}
                              key={p.id}
-                             onClick={() => {
+                             onClick={(e) => {
                                  props.onPageChenged(p);
                              }}>{p}</span>
             })}

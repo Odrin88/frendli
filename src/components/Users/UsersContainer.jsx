@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import {
     follow,
     requestUsers,
-    setCurrentPage,
+    setCurrentPage, setTotalUsersCount,
     toggleFollowingInProgress, unfollow,
 } from "../../Reducers/usersPage";
 import Users from "./Users";
@@ -80,7 +80,8 @@ export default compose(connect(mapStateToProps,
             unfollow,
             setCurrentPage,
             toggleFollowingInProgress,
-            requestUsers
+            requestUsers,
+            setTotalUsersCount
         })
     ) (UsersContainer)
 

@@ -1,4 +1,5 @@
 import {profileAPI, usersAPI as userAPI, usersAPI} from "../API/api";
+import {AxiosRequestConfig as response} from "axios";
 
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
@@ -13,8 +14,8 @@ const setUsersStatus = 'SET_USERS_STATUS';
 
 let initialState = {
     users: [],
-    pageSize: 5,
-    totalUsersCount: 50,
+    pageSize: 10,
+    totalUsersCount: 100,
     currentPage: 1,
     isFetching: true,
     followingInProgress: [],
@@ -56,7 +57,7 @@ const usersReducer = (state = initialState, action) => {
             return {...state, currentPage: action.currentPage}
         }
         case SET_TOTAL_USERS_COUNT: {
-            return {...state, totalUsersCount: action.count}
+            return {...state, totalCount: action.count}
         }
         case TOGGLE_IS_FETCHING: {
             return {...state, isFetching: action.isFetching}
@@ -84,7 +85,7 @@ export const followSuccess = (userId) => ({type: FOLLOW, userId});
 export const unfollowSuccess = (userId) => ({type: UNFOLLOW, userId});
 export const setUsers = (users) => ({type: SETUSERS, users});
 export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage});
-export const setTotalUsersCount = (totalUsersCount) => ({type: SET_TOTAL_USERS_COUNT, count: totalUsersCount});
+export const setTotalUsersCount = (totalCount) => ({type: SET_TOTAL_USERS_COUNT, count: totalCount});
 export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching});
 export const toggleFollowingInProgress = (inProgress, userId) => ({type: TOGGLE_FOLLOWING_IN_PROGRESS, inProgress, userId});
 export const setUserProfileAC = (profile) => ({type: setUserProfile, profile });
@@ -99,7 +100,7 @@ export const requestUsers = (page,pageSize) => {
         usersAPI.requestUsers(page, pageSize).then(data => {
             dispatch (toggleIsFetching(false));
             dispatch (setUsers(data.items));
-            // this.props.setTotalUsersCount(response.data.totalCount);
+            dispatch (setTotalUsersCount(data.totalCount));
         });
     }
 
